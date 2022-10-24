@@ -9,36 +9,41 @@
     <title>Document</title>
 </head>
 <body>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Title</th>
-      <th scope="col">Operator</th>
-      <th scope="col">Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
+  <div class="container w-100">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Title</th>
+          <th scope="col">starting_date</th> 
+          <th scope="col">Closing_date</th>
+          <th scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        @foreach($tickets as $ticket)
+          <th scope="row">{{ $ticket->id }}</th>
+          <td>{{ $ticket->title }}</td>
+          <td>{{ $ticket->starting_date }}</td>
+          <td>{{ $ticket->closing_date }}</td>
+          <td>{{ $ticket->description }}</td>
+        </tr>
+        <!-- <tr>
+          <th scope="row">2</th>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr> -->
+        <!-- <tr>
+          <th scope="row">3</th>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr> -->
+        @endforeach
+      </tbody>
+    </table>
     </div>
 </body>
 </html>

@@ -18,9 +18,12 @@ class TicketFactory extends Factory
     {
         return [
             "title"=>$this->faker->paragraph(),
-            "description" =>$this->faker->sentence(),
+            "number"=>$this->faker->randomNumber(),
             "starting_date" =>$this->faker->dateTime(),
-            "closing_date" =>$this->faker->dateTime()
+            "closing_date" =>$this->faker->dateTime(),
+            "priority"=>$this->faker->numberBetween(1, 5),
+            "status"=>$this->faker->numberBetween(0, 1),
+            "customer_feedback"=>$this->faker->numberBetween(1, 5)
         ];
     }
 }

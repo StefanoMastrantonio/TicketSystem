@@ -36,8 +36,8 @@ class MessageController extends Controller
     public function store(Request $request)
     {
         $storeData = $request->validate([
-            'message' => 'required|text',
-            'message_date' => 'required|date'
+            'message' => 'required',
+            'message_date' => 'required'
         ]);
         $messages = Message::create($storeData);
 

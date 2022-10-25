@@ -37,9 +37,13 @@ class TicketController extends Controller
     public function store(Request $request)
     {
         $storeData = $request->validate([
-            'starting_date' => 'required|date',
-            'closing_date' => 'required|date',
-            'description' => 'required|min:10'
+            'title' => 'required',
+            'number' => 'required',
+            'starting_date' => 'required',
+            'closing_date' => 'required',
+            'priority' => 'required',
+            'status' => 'required',
+            
         ]);
         $tickets = Ticket::create($storeData);
 

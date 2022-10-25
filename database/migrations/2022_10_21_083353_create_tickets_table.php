@@ -16,9 +16,15 @@ return new class extends Migration
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('number');
+            $table->integer('customer_id');
+            $table->integer('operator_id');
             $table->date('starting_date');
             $table->date('closing_date');
-            $table->text('description');
+            $table->string('priority');
+            $table->boolean('status');
+            $table->integer('customer_feedback');
+            $table->string('category_id');
             $table->timestamps();
         });
     }

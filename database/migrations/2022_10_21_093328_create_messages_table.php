@@ -15,8 +15,11 @@ return new class extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('operator_id');
+            $table->integer('customer_id');
             $table->text('message');
             $table->timestamp('messages_date');
+            $table->integer('ticket_id');
             $table->timestamps();
         });
     }

@@ -17,6 +17,6 @@ class Category extends Model
 
     public function operators()
     {
-        return $this->belongsToMany(Operator::class)->withPivot('operator_id');
+        return $this->belongsToMany('App\Operator', 'table_example', 'operator_id', 'category_id');
     }
 }  

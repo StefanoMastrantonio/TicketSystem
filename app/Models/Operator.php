@@ -23,7 +23,7 @@ class Operator extends Model
 
    public function categories() 
    {
-    return $this->belongsToMany(Category::class)->withPivot('category_id');
+    return $this->belongsToMany('App\Category', 'table_exemple', 'operator_id', 'category_id');
    }
 
 }
